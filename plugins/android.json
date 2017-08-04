@@ -1,0 +1,76 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-battery-status": {
+            "PACKAGE_NAME": "com.threebsoft.mystory"
+        },
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "com.threebsoft.mystory"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.threebsoft.mystory"
+        },
+        "cordova-plugin-contacts": {
+            "PACKAGE_NAME": "com.threebsoft.mystory"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.threebsoft.mystory"
+        },
+        "cordova-plugin-device-motion": {
+            "PACKAGE_NAME": "com.threebsoft.mystory"
+        },
+        "cordova-plugin-device-orientation": {
+            "PACKAGE_NAME": "com.threebsoft.mystory"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "com.threebsoft.mystory"
+        },
+        "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "com.threebsoft.mystory"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "com.threebsoft.mystory"
+        },
+        "cordova-plugin-globalization": {
+            "PACKAGE_NAME": "com.threebsoft.mystory"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.threebsoft.mystory"
+        },
+        "cordova-plugin-media": {
+            "PACKAGE_NAME": "com.threebsoft.mystory"
+        },
+        "cordova-plugin-media-capture": {
+            "PACKAGE_NAME": "com.threebsoft.mystory"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "com.threebsoft.mystory"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.threebsoft.mystory"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.threebsoft.mystory"
+        },
+        "cordova-plugin-vibration": {
+            "PACKAGE_NAME": "com.threebsoft.mystory"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.threebsoft.mystory"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.threebsoft.mystory"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.threebsoft.mystory"
+        }
+    }
+}
