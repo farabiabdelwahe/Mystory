@@ -62,7 +62,7 @@
         <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
         <param name="onload" value="true" />
     </feature>
-    <name>Hello World</name>
+    <name>MyStory</name>
     <description>
         Hello World sample application that responds to the deviceready event.
     </description>

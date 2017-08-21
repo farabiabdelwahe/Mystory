@@ -4,7 +4,64 @@
 <!-- Mirrored from rabonadev.com/md/register.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 04 Aug 2017 08:37:13 GMT -->
 <head>
 	<meta charset="UTF-8">
-	<title>MD - Material Design Mobile Template</title>
+
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCwEIWuZAMOSXgdsr1bKUA7SUMAnk4IC9s",
+    authDomain: "mystory-38a26.firebaseapp.com",
+    databaseURL: "https://mystory-38a26.firebaseio.com",
+    projectId: "mystory-38a26",
+    storageBucket: "mystory-38a26.appspot.com",
+    messagingSenderId: "612337990543"
+  };
+  
+    firebase.initializeApp(config);
+  
+  function register() {
+firebase.auth().createUserWithEmailAndPassword(document.getElementById("email").value, document.getElementById("password").value)
+        .then(function(user) {
+		console.log(user.uid)  ;
+            var ref = firebase.database().ref().child("user");
+            var data = {
+                email: document.getElementById("email").value,
+                password: document.getElementById("password").value,
+                firstName:document.getElementById("first-name").value,
+                lastName: document.getElementById("last-name").value,
+                id: user.uid
+            }
+            ref.child(user.uid).set(data).then(function(ref) {//use 'child' and 'set' combination to save data in your own generated key
+                console.log("Saved");
+                $location.path('/login');
+            }, function(error) {
+                console.log(error); 
+            });
+        })
+        .catch(function(error) {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            if (errorCode == 'auth/weak-password') {
+                alert('The password is too weak.');
+            } else if (errorCode == 'auth/email-already-in-use') {
+                alert('The email is already taken.');
+            } else if (errorCode == 'auth/weak-password') {
+                alert('Password is weak');
+            } else {
+                alert(errorMessage);
+            }
+            console.log(error);
+        });
+
+  
+  // ...
+
+
+}
+</script>
+	<title>MyStory</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1  maximum-scale=1 user-scalable=no">
 	<meta name="mobile-web-app-capable" content="yes">
 	<meta name="HandheldFriendly" content="True">
@@ -29,9 +86,7 @@
 			<div class="site-title">
 				<a href="index-2.html"><h1>MD</h1></a>
 			</div>
-			<div class="panel-control-right">
-				<a href="#" data-activates="slide-out-right" class="sidenav-control-right"><i class="fa fa-bars"></i></a>
-			</div>
+		
 		</div>
 	</div>
 	<!-- end navbar -->
@@ -108,6 +163,13 @@
 				<div class="input-field">
 					<input id="username" type="text" class="validate">
 					<label for="username">Username</label>
+					
+				</div>
+				<div class="input-field">
+	
+				<input type="date" >
+					<label for="username">date</label>
+					
 				</div>
 				<div class="input-field">
 					<input id="email" type="email" class="validate">
@@ -117,7 +179,7 @@
 					<input id="password" type="password" class="validate">
 					<label for="password">Password</label>
 				</div>
-				<button class="button">Register</button>
+				<button class="button" onclick="register()">Register</button>
 				<strong class="login-now">Your already registered? <a href="#">Login now</a></strong>
 			</form>
 			<div class="or">
@@ -133,24 +195,8 @@
 	<!-- footer -->
 	<footer>
 		<div class="container">
-			<h6>Find & follow us</h6>
-			<ul class="icon-social">
-				<li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
-				<li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
-				<li class="google"><a href="#"><i class="fa fa-google"></i></a></li>
-				<li class="instagram"><a href="#"><i class="fa fa-instagram"></i></a></li>
-				<li class="rss"><a href="#"><i class="fa fa-rss"></i></a></li>
-			</ul>
-			<div class="tel-fax-mail">
-				<ul>
-					<li><span>Tel:</span> 900000o02</li>
-					<li><span>Fax:</span> 0400000o98</li>
-					<li><span>Email:</span> info@youremail.com</li>
-				</ul>
-			</div>
-			<div class="ft-bottom">
-				<span>Copyright © 2017 All Rights Reserved </span>
-			</div>
+			
+			
 		</div>
 	</footer>
 	<!-- end footer -->
