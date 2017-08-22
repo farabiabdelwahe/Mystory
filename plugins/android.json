@@ -63,6 +63,9 @@
         },
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.threebsoft.mystory"
+        },
+        "cordova-plugin-firebase": {
+            "PACKAGE_NAME": "com.threebsoft.mystory"
         }
     },
     "dependent_plugins": {

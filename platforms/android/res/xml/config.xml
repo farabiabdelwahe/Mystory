@@ -62,6 +62,10 @@
         <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
         <param name="onload" value="true" />
     </feature>
+    <feature name="FirebasePlugin">
+        <param name="android-package" value="org.apache.cordova.firebase.FirebasePlugin" />
+        <param name="onload" value="true" />
+    </feature>
     <name>MyStory</name>
     <description>
         Hello World sample application that responds to the deviceready event.
@@ -70,7 +74,14 @@
         PhoneGap Team
     </author>
     <content src="index.html" />
+    <access origin="https://*.firebaseio.com" requires-forward-secrecy="false" subdomains="true" />
+    <allow-intent href="*" />
     <access origin="*" />
+    <access origin="https://*.google-analytics.com" />
+    <access origin="https://*.googleapis.com" />
+    <access origin="https://*.firebaseio.com" />
+    <allow-navigation href="*" />
+    <allow-navigation href="http://ionic.local/*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />
