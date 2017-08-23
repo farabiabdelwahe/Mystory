@@ -117,6 +117,8 @@
     });
 
     function login() {
+	
+	
       alert("errorMegggssage");
       var email = document.getElementById("email").value;
       var password = document.getElementById("password").value;
@@ -137,8 +139,10 @@
           return firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
             var username = (snapshot.val() && snapshot.val().username) || 'Anonymous';
             // ...
-						localStorage.setItem("connecteduser", snapshot.val());
+						localStorage.setItem("connecteduser", JSON.stringify(snapshot.val()));
             window.location.href = "index-2.html";
+			
+
 
           });
 
@@ -156,7 +160,5 @@
   </script>
 
 </body>
-
-<!-- Mirrored from rabonadev.com/md/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 04 Aug 2017 08:37:13 GMT -->
 
 </html>
